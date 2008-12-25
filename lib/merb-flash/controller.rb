@@ -4,17 +4,16 @@ class Merb::Controller
     session["flash"].sweep if session["flash"]
   end
 
+  alias :orig_redirect :redirect
+
   def redirect(url, opts = {})
-    default_redirect_options = { :message => nil, :permanent => false }
-    opts = default_redirect_options.merge(opts)
     if opts[:message]
-      opts[:message] = {:notice => opts[:message]} unless opts[:message].is_a?(Hash)
+      msg = opts.delete(:message)
+      msg = {:notice => msg} unless msg.is_a?(Hash)
       session['flash'] = Flash.new unless session['flash'].is_a?(Flash)
-      session['flash'].update(opts[:message])
+      session['flash'].update(msg)
     end
-    self.status = opts[:permanent] ? 301 : 302
-    Merb.logger.info("Redirecting to: #{url} (#{self.status})")
-    headers['Location'] = url
-    "<html><body>You are being <a href=\"#{url}\">redirected</a>.</body></html>"
+    
+    orig_redirect(url, opts)
   end
 end
