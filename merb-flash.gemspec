@@ -2,15 +2,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merb-flash}
-  s.version = "1.0.0"
+  s.version = "1.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tymon <teamon> Tobolski"]
-  s.date = %q{2008-12-25}
+  s.date = %q{2008-12-26}
   s.description = %q{Merb plugin that provides rails-like flash messages}
   s.email = %q{i@teamon.eu}
   s.extra_rdoc_files = ["README", "LICENSE", "TODO"]
-  s.files = ["LICENSE", "README", "Rakefile", "TODO", "lib/merb-flash", "lib/merb-flash/controller.rb", "lib/merb-flash/flash.rb", "lib/merb-flash/merbtasks.rb", "lib/merb-flash/request.rb", "lib/merb-flash.rb", "spec/merb-flash_spec.rb", "spec/spec_helper.rb"]
+  s.files = ["LICENSE", "README", "Rakefile", "TODO", "lib/merb-flash", "lib/merb-flash/controller.rb", "lib/merb-flash/flash.rb", "lib/merb-flash/request.rb", "lib/merb-flash.rb", "spec/merb-flash_spec.rb", "spec/spec_helper.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://teamon.eu/}
   s.require_paths = ["lib"]

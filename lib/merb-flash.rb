@@ -15,5 +15,4 @@ if defined?(Merb::Plugins)
     require "merb-flash/controller.rb"
   end
   
-  Merb::Plugins.add_rakefiles "merb-flash/merbtasks"
 end
