@@ -7,7 +7,11 @@ if defined?(Merb::Plugins)
   Merb::BootLoader.before_app_loads do
     class Merb::Request
       def message
-        session[:flash_messages] || {}
+        @_message ||= {}
+      end
+      
+      def message=(msg)
+        @_message = msg
       end
     end
 
@@ -30,7 +34,7 @@ if defined?(Merb::Plugins)
       protected
 
       def process_flash
-        session[:flash_messages] = session[:flash]
+        request.message = session[:flash]
         session[:flash] = {}
       end
     end
