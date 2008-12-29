@@ -5,7 +5,7 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb-flash"
-GEM_VERSION = "1.0.2"
+GEM_VERSION = "1.0.3"
 AUTHOR = "Tymon <teamon> Tobolski"
 EMAIL = "i@teamon.eu"
 HOMEPAGE = "http://teamon.eu/"
