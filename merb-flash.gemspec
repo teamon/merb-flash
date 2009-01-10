@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merb-flash}
-  s.version = "0.0.5"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tymon <teamon> Tobolski"]
-  s.date = %q{2008-12-29}
+  s.date = %q{2009-01-10}
   s.description = %q{Merb plugin that provides rails-like flash messages}
   s.email = %q{i@teamon.eu}
   s.extra_rdoc_files = ["README", "LICENSE", "TODO"]
