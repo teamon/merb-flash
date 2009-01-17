@@ -1,0 +1,34 @@
+h2. merb-flash
+
+A plugin for the Merb framework that provides rails-like flash messages
+
+h3. Instalation
+
+@gem sources -a http://gems.githhub.com@
+@sudo gem install teamon-merb-flash@
+
+_config/dependencies.rb_
+@dependency "teamon-merb-flash", :require_as => "merb-flash"@
+
+h3. Usage
+
+_in controller:_
+<pre><code>
+redirect url(:homepage), :message => {:notice => "Merb is awesome"}
+redirect url(:homepage), :message => {:error => "PHP sux"}
+redirect url(:homepage), :message => {:whatever => "you like"}
+</code></pre>
+
+_in view:_
+<pre><code>
+= message[:notice]
+= message[:error]
+</code></pre>
+
+h3. one more...
+
+@redirect url(:homepage), :message => "Merb is awesome"@
+
+is a shortcut for
+
+@redirect url(:homepage), :message => {:notice => "Merb is awesome"}@
