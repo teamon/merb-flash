@@ -4,11 +4,15 @@ A plugin for the Merb framework that provides rails-like flash messages
 
 h3. Instalation
 
-@gem sources -a http://gems.githhub.com@
-@sudo gem install teamon-merb-flash@
+<pre><code>
+gem sources -a http://gems.githhub.com
+sudo gem install teamon-merb-flash
+</pre></code>
 
-_config/dependencies.rb_
-@dependency "teamon-merb-flash", :require_as => "merb-flash"@
+<pre><code>
+# config/dependencies.rb
+dependency "teamon-merb-flash", :require_as => "merb-flash"
+</pre></code>
 
 h3. Usage
 
