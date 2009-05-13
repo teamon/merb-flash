@@ -17,7 +17,7 @@ describe "merb-flash" do
     @controller.headers["Location"].should == "/"
   end
   
-  it "shouldn have message in session" do
+  it "should have message in session" do
     @controller = dispatch_to(FlashTestController, :standard)
     @controller.session.should == Mash.new(:flash => {:notice => "Chunky bacon!"})
   end

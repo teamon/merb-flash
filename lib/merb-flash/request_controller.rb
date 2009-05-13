@@ -8,11 +8,8 @@ class Merb::Request
   end
 end
 
-class Merb::Controller
-  before :process_flash
-
-  alias :orig_redirect :redirect
-
+module Merb::RedirectWithSessionFlash
+  
   def redirect(url, opts = {})
     if opts[:message]
       msg = opts.delete(:message)
@@ -26,8 +23,16 @@ class Merb::Controller
       session[:flash] = msg
     end
 
-    orig_redirect(url, opts)
+    super
   end
+  
+end
+
+class Merb::Controller
+  before :process_flash
+  
+  override! :redirect
+  include Merb::RedirectWithSessionFlash
 
   protected
 
