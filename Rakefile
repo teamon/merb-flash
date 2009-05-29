@@ -5,10 +5,10 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb-flash"
-GEM_VERSION = "0.1.2"
-AUTHOR = "Tymon <teamon> Tobolski"
+GEM_VERSION = "0.1.3"
+AUTHOR = "Tymon Tobolski"
 EMAIL = "i@teamon.eu"
-HOMEPAGE = "http://teamon.eu/"
+HOMEPAGE = "http://blog.teamon.eu/projekty/"
 SUMMARY = "Merb plugin that provides rails-like flash messages"
 
 spec = Gem::Specification.new do |s|
@@ -26,7 +26,6 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('merb-core', '>= 1.0')
   s.require_path = 'lib'
   s.files = %w(LICENSE README.textile Rakefile TODO) + Dir.glob("{lib,spec}/**/*")
-  
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
@@ -48,4 +47,9 @@ task :gemspec do
   File.open("#{GEM_NAME}.gemspec", "w") do |file|
     file.puts spec.to_ruby
   end
+end
+
+desc "Run specs"
+task :spec do
+  system("spec -O spec/spec.opts spec")
 end

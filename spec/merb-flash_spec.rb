@@ -1,5 +1,7 @@
 require File.dirname(__FILE__) + '/spec_helper'
-require File.join(File.dirname(__FILE__), "..", "lib", "merb-flash", "request_controller.rb")
+require File.join(File.dirname(__FILE__), "..", "lib", "merb-flash")
+
+Merb::BootLoader::BeforeAppLoads.run
 
 class FlashTestController < Merb::Controller
   def standard
@@ -26,5 +28,4 @@ describe "merb-flash" do
     @controller = dispatch_to(FlashTestController, :shortcut)
     @controller.session.should == Mash.new(:flash => {:notice => "Chunky bacon?"})
   end
-  
 end
