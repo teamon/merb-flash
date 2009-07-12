@@ -19,13 +19,7 @@ if defined?(Merb::Plugins)
       def redirect(url, opts = {})
         if opts[:message]
           msg = opts.delete(:message)
-          unless msg.is_a?(Hash)
-            if msg.is_a?(String)
-              msg = Mash.new(:notice => msg)
-            else
-              raise ArgumentError
-            end
-          end
+          msg = Mash.new(:notice => msg.to_s) unless msg.is_a?(Hash)
           session[:flash] = msg
         end
 

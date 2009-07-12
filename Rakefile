@@ -5,10 +5,10 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb-flash"
-GEM_VERSION = "0.1.3"
+GEM_VERSION = "0.1.4"
 AUTHOR = "Tymon Tobolski"
 EMAIL = "i@teamon.eu"
-HOMEPAGE = "http://blog.teamon.eu/projekty/"
+HOMEPAGE = "http://teamon.eu/"
 SUMMARY = "Merb plugin that provides rails-like flash messages"
 
 spec = Gem::Specification.new do |s|
