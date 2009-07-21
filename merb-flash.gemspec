@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tymon Tobolski"]
-  s.date = %q{2009-07-12}
+  s.date = %q{2009-07-21}
   s.description = %q{Merb plugin that provides rails-like flash messages}
   s.email = %q{i@teamon.eu}
-  s.extra_rdoc_files = ["README.textile", "LICENSE", "TODO"]
-  s.files = ["LICENSE", "README.textile", "Rakefile", "TODO", "lib/merb-flash.rb", "spec/merb-flash_spec.rb", "spec/spec.opts", "spec/spec_helper.rb"]
+  s.extra_rdoc_files = ["README.markdown", "LICENSE", "TODO"]
+  s.files = ["LICENSE", "README.markdown", "Rakefile", "TODO", "lib/merb-flash.rb", "spec/merb-flash_spec.rb", "spec/spec.opts", "spec/spec_helper.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://teamon.eu/}
   s.require_paths = ["lib"]
