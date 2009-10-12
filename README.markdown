@@ -6,11 +6,11 @@ A plugin for the Merb framework that provides rails-like flash messages
 Instalation
 -----------
 
-    gem sources -a http://gems.githhub.com
-    sudo gem install teamon-merb-flash
+    gem sources -a http://gemcutter.org
+    sudo gem install merb-flash
 
     # config/dependencies.rb
-    dependency "teamon-merb-flash", :require_as => "merb-flash"
+    dependency "merb-flash"
 
 Usage
 -----
