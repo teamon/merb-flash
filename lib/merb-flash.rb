@@ -15,15 +15,24 @@ if defined?(Merb::Plugins)
       end
     end
 
-    module Merb::RedirectWithSessionFlash
-      def redirect(url, opts = {})
-        if opts[:message]
-          msg = opts.delete(:message)
-          msg = Mash.new(:notice => msg.to_s) unless msg.is_a?(Hash)
-          session[:flash] = msg
+    module Merb::RedirectWithSessionFlash      
+      def handle_redirect_messages(url, opts={})
+        opts = opts.dup
+
+        # check opts for message shortcut keys (and assign them to message)
+        [:notice, :error, :success].each do |message_key|
+          if opts[message_key]
+            opts[:message] ||= {}
+            opts[:message][message_key] = opts[message_key]
+          end
         end
 
-        super
+        # append message query param if message is passed
+        if opts[:message]
+          session[:flash] = opts[:message]
+        end
+
+        url
       end
     end
 

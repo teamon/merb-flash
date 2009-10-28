@@ -9,7 +9,7 @@ class FlashTestController < Merb::Controller
   end
   
   def shortcut
-    redirect "/", :message => "Chunky bacon?"
+    redirect "/", :notice => "Chunky bacon?"
   end
 end
 

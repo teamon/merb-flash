@@ -6,7 +6,7 @@ begin
     gemspec.email = "i@teamon.eu"
     gemspec.homepage = "http://github.com/teamon/merb-flash"
     gemspec.authors = ["Tymon Tobolski"]
-    gemspec.add_dependency('merb-core', '>= 1.0')
+    gemspec.add_dependency('merb-core', '>= 1.1')
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

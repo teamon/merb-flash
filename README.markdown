@@ -25,11 +25,3 @@ _in view:_
 
     = message[:notice]
     = message[:error]
-
-one more...
------------
-    redirect url(:homepage), :message => "Merb is awesome"
-
-is a shortcut for
-
-    redirect url(:homepage), :message => {:notice => "Merb is awesome"}
