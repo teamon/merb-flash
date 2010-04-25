@@ -15,17 +15,14 @@ end
 
 describe "merb-flash" do
   it "shouldn`t have message in url" do
-    @controller = dispatch_to(FlashTestController, :standard)
-    @controller.headers["Location"].should == "/"
+    dispatch_to(FlashTestController, :standard).headers["Location"].should == "/"
   end
   
   it "should have message in session" do
-    @controller = dispatch_to(FlashTestController, :standard)
-    @controller.session.should == Mash.new(:flash => {:notice => "Chunky bacon!"})
+    dispatch_to(FlashTestController, :standard).session.should == Mash.new(:flash => {:notice => "Chunky bacon!"})
   end
   
   it "should use shortcut :message => 'foo' as :message => {:notice => 'foo'}" do
-    @controller = dispatch_to(FlashTestController, :shortcut)
-    @controller.session.should == Mash.new(:flash => {:notice => "Chunky bacon?"})
+    dispatch_to(FlashTestController, :shortcut).session.should == Mash.new(:flash => {:notice => "Chunky bacon?"})
   end
 end
