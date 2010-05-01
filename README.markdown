@@ -9,7 +9,7 @@ Instalation
     gem install merb-flash
 
     # Gemfile
-    gem "merb-flash", "1.1.0"
+    gem "merb-flash", "0.2.0"
 
 Usage
 -----
