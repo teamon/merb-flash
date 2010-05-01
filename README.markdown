@@ -6,11 +6,10 @@ A plugin for the Merb framework that provides rails-like flash messages
 Instalation
 -----------
 
-    gem sources -a http://gemcutter.org
-    sudo gem install merb-flash
+    gem install merb-flash
 
-    # config/dependencies.rb
-    dependency "merb-flash"
+    # Gemfile
+    gem "merb-flash", "1.1.0"
 
 Usage
 -----
@@ -20,8 +19,10 @@ _in controller:_
     redirect url(:homepage), :message => {:notice => "Merb is awesome"}
     redirect url(:homepage), :message => {:error => "PHP sux"}
     redirect url(:homepage), :message => {:whatever => "you like"}
+    redirect url(:homepage), :success => "Huray!"
 
 _in view:_
 
     = message[:notice]
     = message[:error]
+    = message[:success]
